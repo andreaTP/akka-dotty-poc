@@ -133,7 +133,8 @@ class LightArrayRevolverScheduler(config: Config, log: LoggingAdapter, threadFac
           case null => false
           case c =>
             if (c.cancel()) compareAndSet(c, null)
-            else compareAndSet(c, null) || cancel()
+            // DOTTY -> this syntax actually make the check
+            else compareAndSet(c, null) || (cancel(): @tailrec)
         }
       }
 

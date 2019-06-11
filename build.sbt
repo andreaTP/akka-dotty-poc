@@ -13,13 +13,12 @@ lazy val root = project
 
 
     // debug
-    logLevel := Level.Error,
+    //logLevel := Level.Error,
     libraryDependencies ++= Seq(
       "com.typesafe" % "config" % "1.3.4",
       "org.scala-lang.modules" % "scala-java8-compat_2.12" % "0.9.0"
-    )
+    ),
 
-    // libraryDependencies ++= Seq(
-    //       compilerPlugin("com.github.ghik" %% "silencer-plugin" % silencerVersion),
-    //       "com.github.ghik" %% "silencer-lib" % silencerVersion % Provided)
+    sources in (Compile, doc) := Seq()
+
   )
