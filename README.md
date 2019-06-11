@@ -1,9 +1,22 @@
-## sbt project compiled with Dotty
+## Akka Actor module compiled with Dotty
 
-### Usage
+This is the output of a few ours at Scala Spree 2019 at Scala Days.
 
-This is a normal sbt project, you can compile code with `sbt compile` and run it
-with `sbt run`, `sbt console` will start a Dotty REPL.
+Thanks to @nicolasstucki for the support!
 
-For more information on the sbt-dotty plugin, see the
-[dotty-example-project](https://github.com/lampepfl/dotty-example-project/blob/master/README.md).
+# Usage
+
+There is  a trivial actor ping-pong implemented in the tests that you can run via:
+```
+sbt test
+```
+
+# Caveats
+
+This was a quick and dirty port most of the changes from current akka master branch are marked with a comment starting with:
+
+```
+// DOTTY
+```
+
+The Logging system is basically disabled.
